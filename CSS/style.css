@@ -1,0 +1,252 @@
+/* Projeto de animação em CSS/HTML */
+/* Brennon Meireles */
+/* 12/10/2023 */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 611px; /*delimita a pocição da garrafa na janela*/
+    background-color: #121212;
+}
+
+.garrafa{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    border: 8px solid transparent;
+    animation: animate 5s linear infinite;  /*define uma animação para ser aplicada a um elemento.*/
+    /* linear: define o tipo de temporização da animação, a animação ocorrerá a uma taxa constante, sem aceleração ou desaceleração. */
+    /* infinite: define que a animação deve ser executada infinitamente.*/
+    transform-origin: bottom center;
+    animation-play-state: run;
+}
+
+@keyframes animate{
+    0%{ 
+        transform: rotate(0deg);
+        
+    }
+    25%{
+        transform: rotate(22deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    75%{
+        transform: rotate(-22deg);
+    }
+    100%{
+        filter: rotate(360deg);
+    }
+}
+
+.garrafa::before{
+    content: "";
+    position: absolute; /*define a posição do elemento na pg em relação a um elemento pai específico, ignorando o layout normal. 
+    É usado para criar sobreposições e elementos que precisam de posicionamento preciso.*/
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%); /* Define um movimento horizontal. da borda */
+    width: 40%;
+    height: 30px;
+    border: 15px solid #444;
+    border-radius: 50%;
+    box-shadow: 0 10px #222; /*define uma sombra */
+    z-index: 1;
+    
+}
+ 
+.tampa{
+    content: "";
+    position: absolute;
+    top: -39px; 
+    left: 28%;
+    background-color: #79380a;
+    scale: 500px;
+    width: 125px;
+    height: 50px;
+    border-radius: 20% 20% 40% 40% ;
+    transform: scaleY(1.8);
+    z-index: 2;
+
+}
+
+.tampa::before{
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 2px;
+    background-color: #894310;
+    width: 122px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.garrafa::after{
+    content: "";
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-50%); /*Define um movimento circular na horizontal*/
+    width: 150px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    transform-origin: center; /*, está especificando que as transformações devem ocorrer em torno do centro do elemento.*/
+    animation: sombra-da-garrafa 5s linear initial; /*. Quando você define "initial," a animação começa no estado inicial definido em sua definição de animação,
+    que é o estado 0% dos quadros-chave (keyframes).*/
+    border-radius: 50%;
+    animation-play-state: running; /* Define que a animação deve estar em execução, ou seja, ela deve ser reproduzida.*/
+}
+
+@keyframes sombra-da-garrafa{
+    0%{
+        left: 50%;
+        width: 150px;
+        height: 60px;
+    }
+    25%{
+        left: 55%;
+        width: 140px;
+        height: 65px;
+    }
+    50%{
+        left: 50%;
+        width: 150px;
+        height: 60px;
+    }
+    75%{
+        left: 45%;
+        width: 140px;
+        height: 65px;
+    }
+    100%{
+
+    }
+}
+
+.agua{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background-color: #00e2ff;
+    border-bottom-left-radius: 150px;
+    border-bottom-right-radius: 150px;
+    filter: drop-shadow(0 0 5px #ffffff); /*está aplicando um efeito de sombra usando a função */
+    transform-origin: top center;
+    animation: animate-agua 5s linear infinite;
+    animation-play-state: running;
+
+}
+
+@keyframes animate-agua {
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(-22deg);
+    }
+    30%{
+        transform: rotate(-23deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    75%{
+        transform: rotate(22deg);
+    }
+    80%{
+        transform: rotate(23deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.agua::before{
+    content: "";
+    position: absolute;
+    top: -10px;
+    width: 100%;
+    height: 20px;
+    background: #0aa1dd;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 80px #ffffff);
+}
+
+.sombra{
+    position: absolute; 
+    top: calc(50% + 150px); /* Define a posição vertical p/ 50% da altura do elemento pai. O elemento estará no meio do pai.
+    + 150px: Acrescenta 150 pixels à posição calculada. O elemento será deslocado verticalmente para baixo a partir do centro em 150 pixels.*/
+    left: 50px;
+    transform: translate(-50%, 50%); /*movendo-o horizontalmente e verticalmente.*/
+    width: 260px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    animation: animate-sombra 5s linear infinite;
+    animation-play-state: running;
+}
+
+@keyframes animate-sombra{
+    0%{
+        left: 50%;
+        width: 260px;
+        height: 40px;
+        top: calc(50% + 100px);
+    }
+    25%{
+        left: 55%;
+        width: 265px;
+        height: 30px;
+        top: calc(50% + 120px);
+    }
+    50%{
+        left: 50%;
+        width: 260px;
+        height: 40px;
+        top: calc(45% + 125px);
+    }
+    75%{
+        left: 45%;
+        width: 265px;
+        height: 30px;
+        top: calc(50% + 120px);
+    }
+    100%{
+        left: 50%;
+        width: 260px;
+        height: 40px;
+        top: calc(50% + 100px);
+    }
+}
+
+/* textos */
+
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+
+#texto{
+    font-size: 35px;
+    /* font-family: 'roboto', sans-serif; */
+    /* font-family: 'Gabarito', sans-serif; */
+    /* font-weight: bolder; */
+    font-family: 'Major Mono Display', monospace;                   
+    background: none;
+    /* text-transform: uppercase; */
+    filter: drop-shadow(0 0 2px #ffffff);
+    text-align: center;
+    color:#ffffff;
+    position: absolute;
+    top: 525px;
+}
