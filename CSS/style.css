@@ -236,15 +236,17 @@ section{
 
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
 
-.texto{
+#texto{
     font-size: 35px;
+    /* font-family: 'roboto', sans-serif; */
+    /* font-family: 'Gabarito', sans-serif; */
+    /* font-weight: bolder; */
     font-family: 'Major Mono Display', monospace;                   
     background: none;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     filter: drop-shadow(0 0 2px #ffffff);
-    text-align: 30% center;
+    text-align: center;
     color:#ffffff;
     position: absolute;
-    top: 10px;
-
+    top: 525px;
 }
