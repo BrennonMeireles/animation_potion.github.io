@@ -1,5 +1,6 @@
 ## Projeto de Animação de Poção em HTML e CSS
 Bem-vindo ao repositório do projeto de animação de uma poção desenvolvido em HTML e CSS. Este projeto foi criado com o objetivo de explorar e compreender melhor as técnicas de modelagem e animação utilizando CSS.
+https://brennonmeireles.github.io/animation_potion.github.io/
 
 ## Descrição
 Neste projeto, criamos uma animação interativa de uma poção mágica usando apenas HTML e CSS. A poção é composta por diferentes elementos, como frasco, líquido, bolhas e fumaça, todos criados e estilizados com CSS puro.
