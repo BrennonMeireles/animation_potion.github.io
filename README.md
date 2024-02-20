@@ -12,8 +12,8 @@ Animação do Líquido: Utilizamos transições e transformações CSS para cria
 Clone este repositório em sua máquina local. Abra o arquivo index.html em seu navegador da web. Observe a animação da poção...
 
 ## Tecnologias Utilizadas
-HTML5: Utilizado para estruturar a página da web. 
-CSS3: Utilizado para estilizar todos os elementos e criar as animações.
+- HTML5: Utilizado para estruturar a página da web. 
+- CSS3: Utilizado para estilizar todos os elementos e criar as animações.
 
 ## Contribuição
 Sinta-se à vontade para contribuir com este projeto! Você pode adicionar novas funcionalidades, otimizar o código existente, corrigir problemas ou propor melhorias no design da poção.
